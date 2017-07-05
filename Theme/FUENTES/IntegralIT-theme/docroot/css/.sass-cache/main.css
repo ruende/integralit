@@ -9908,15 +9908,60 @@ nav {
 .aui #banner ul li {
   float: left; }
 
+#banner {
+  background: rgba(0, 0, 0, 0.19) none repeat scroll 0 0;
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 4; }
+
 .parallax-container {
   height: 300px;
   z-index: 0; }
 
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Bebas Neue"), url("@base_url@/css/../fonts/BebasNeue.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Bebas Neue Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Bebas Neue Book"), url("@base_url@/css/../fonts/BebasNeue Book.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Light"), url("@base_url@/css/../fonts/Proxima Nova Light.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Regular"), url("@base_url@/css/../fonts/Proxima Nova Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Bold"), url("@base_url@/css/../fonts/Proxima Nova Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Extrabold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Extrabold"), url("@base_url@/css/../fonts/ProximaNova-Xbold.woff") format("woff"); }
+
 /*:::::::: :: MENU HORIZONTAL :: :::::::::::*/
-/*.aui ul.nav-wrapper-iit{
-    margin: 0;
-    padding: 0;
-}*/
+.aui ul.nav-wrapper-iit {
+  margin: 0;
+  padding: 0; }
+
 .nav-wrapper-iit {
   list-style: none;
   float: right; }
@@ -9925,7 +9970,6 @@ nav {
   float: left;
   overflow: hidden;
   width: 0px;
-  border: 1px solid red;
   height: 70px; }
 
 .nav-iit {
@@ -9973,13 +10017,91 @@ nav {
 .nav-wrapper-iit.active > #menu-iit .ico-menu {
   transform: rotate(450deg); }
 
-/*:::::::::::: ::::: :: :CSS PRUEBA : : : :::::*/
+/*:::::::::::: NAVEGACION HOME : : : :::::*/
 body {
   height: 6000px;
   font-family: Helvetica, Arial; }
 
+.iit-container {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+
+.iit-hidden {
+  display: none; }
+
+.iit-element {
+  position: absolute; }
+
+.panel-center {
+  height: 700px; }
+
+.panel-center .fullscreen {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+
+.panel-center .fullscreen::after {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/image-overlay.png") repeat-x scroll 0 bottom;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.panel-center .shell {
+  display: table;
+  height: 100%;
+  pointer-events: none;
+  vertical-align: middle; }
+
+.shell {
+  margin: 0 auto;
+  width: 960px; }
+
+.panel-center-inner {
+  display: table-cell;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+  z-index: 2; }
+
+.panel-center h1 {
+  color: #fff;
+  font-family: "Bebas Neue";
+  font-size: 140px;
+  font-weight: normal;
+  line-height: 128px;
+  padding-bottom: 40px;
+  text-align: center; }
+
+.panel-center h3 {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 60px;
+  padding-bottom: 20px;
+  text-align: center; }
+
+.panel-center p {
+  color: #fff;
+  font-family: "Proxima Nova Regular",sans-serif;
+  font-size: 17px;
+  line-height: 34px;
+  padding-bottom: 14px;
+  text-align: center; }
+
 #top-menu {
-  background: white none repeat scroll 0 0;
   position: fixed;
   right: 0;
   top: 100px;
@@ -10026,15 +10148,15 @@ body {
 #top-menu li.active a {
   color: #333; }
 
-#foo {
+#nosotros {
   position: absolute;
   top: 400px; }
 
-#bar {
+#servicios {
   position: absolute;
   top: 800px; }
 
-#baz {
+#clientes {
   position: absolute;
   top: 1200px; }
 
