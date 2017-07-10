@@ -9329,6 +9329,538 @@ header .navbar-toggle:hover {
   .carousel_alloy .carousel-caption .btn {
     margin-top: 10px; }
 
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box; }
+
+.cd-image-replace {
+  /* replace text with image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  color: transparent; }
+
+/* -------------------------------- 
+
+Navigation trigger - visible on small devices only
+
+-------------------------------- */
+.cd-nav-trigger {
+  display: block;
+  position: fixed;
+  z-index: 2;
+  bottom: 30px;
+  right: 5%;
+  height: 44px;
+  width: 44px;
+  border-radius: 0.25em;
+  background: rgba(234, 242, 227, 0.9);
+  /* reset button style */
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none; }
+
+.cd-nav-trigger span {
+  /* central dot */
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  background-color: #3a2c41;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); }
+
+.cd-nav-trigger span::before, .cd-nav-trigger span::after {
+  /* bottom and top dots */
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #3a2c41;
+  border-radius: inherit; }
+
+.cd-nav-trigger span::before {
+  top: -9px; }
+
+.cd-nav-trigger span::after {
+  bottom: -9px; }
+
+@media only screen and (min-width: 800px) {
+  .cd-nav-trigger {
+    display: none; } }
+/* -------------------------------- 
+
+Vertical navigation
+
+-------------------------------- */
+.cd-vertical-nav {
+  position: fixed;
+  z-index: 1;
+  right: 5%;
+  bottom: 30px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90%;
+  overflow-y: auto;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: right bottom;
+  -moz-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  -o-transform-origin: right bottom;
+  transform-origin: right bottom;
+  -webkit-transition: -webkit-transform 0.2s;
+  -moz-transition: -moz-transform 0.2s;
+  transition: transform 0.2s;
+  border-radius: 0.25em;
+  background-color: rgba(234, 242, 227, 0.9); }
+
+.cd-vertical-nav a {
+  display: block;
+  padding: 1em;
+  color: #3a2c41;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(58, 44, 65, 0.1);
+  text-decoration: none !important;
+  font-family: "Bebas Neue Book",sans-serif;
+  margin: 1.4em auto !important;
+  font-weight: normal;
+  font-size: 1.3rem; }
+
+.cd-vertical-nav a.active {
+  color: #c0a672; }
+
+.cd-vertical-nav.open {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-overflow-scrolling: touch; }
+
+.cd-vertical-nav.open + .cd-nav-trigger {
+  background-color: transparent; }
+
+.cd-vertical-nav.open + .cd-nav-trigger span {
+  background-color: rgba(58, 44, 65, 0); }
+
+.cd-vertical-nav.open + .cd-nav-trigger span::before, .cd-vertical-nav.open + .cd-nav-trigger span::after {
+  /* transform dots in 'X' icon */
+  height: 3px;
+  width: 20px;
+  border-radius: 0;
+  left: -8px; }
+
+.cd-vertical-nav.open + .cd-nav-trigger span::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 1px; }
+
+.cd-vertical-nav.open + .cd-nav-trigger span::after {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  bottom: 0; }
+
+@media only screen and (min-width: 800px) {
+  .cd-vertical-nav {
+    /* reset style */
+    right: 0;
+    top: 70px;
+    bottom: auto;
+    height: 100vh;
+    width: 80px;
+    max-width: none;
+    max-height: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    background-color: transparent;
+    /* vertically align its content*/
+    display: table; }
+
+  .cd-vertical-nav::before {
+    /* this is the navigation background */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.19) none repeat scroll 0 0;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s; }
+
+  .no-touch .cd-vertical-nav:hover::before, .touch .cd-vertical-nav::before {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0); }
+
+  .cd-vertical-nav ul {
+    /* vertically align <ul> inside <nav>*/
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center; }
+
+  .cd-vertical-nav a {
+    position: relative;
+    padding: 3em 0 0;
+    margin: 1.4em auto;
+    border-bottom: none;
+    font-size: 1rem;
+    color: #eaf2e3; }
+
+  .cd-vertical-nav a.active {
+    color: #eaf2e3; }
+
+  .cd-vertical-nav a::before, .cd-vertical-nav a::after {
+    /* used to create the filled circle and the background icon */
+    content: '';
+    position: absolute;
+    left: 50%;
+    /* Force Hardware Acceleration */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0); }
+
+  .cd-vertical-nav a::before {
+    /* filled circle */
+    top: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: #eaf2e3;
+    -webkit-transform: translateX(-50%) scale(0.25);
+    -moz-transform: translateX(-50%) scale(0.25);
+    -ms-transform: translateX(-50%) scale(0.25);
+    -o-transform: translateX(-50%) scale(0.25);
+    transform: translateX(-50%) scale(0.25);
+    -webkit-transition: -webkit-transform 0.4s, background-color 0.2s;
+    -moz-transition: -moz-transform 0.4s, background-color 0.2s;
+    transition: transform 0.4s, background-color 0.2s; }
+
+  .cd-vertical-nav a::after {
+    /* icon */
+    opacity: 0;
+    top: 8px;
+    height: 16px;
+    width: 16px;
+    background: url(@base_url@/css/../images/svg/cd-nav-icons.svg) no-repeat;
+    -webkit-transform: translateX(-50%) scale(0);
+    -moz-transform: translateX(-50%) scale(0);
+    -ms-transform: translateX(-50%) scale(0);
+    -o-transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) scale(0);
+    -webkit-transition: -webkit-transform 0.4s 0s, opacity 0.1s 0.3s;
+    -moz-transition: -moz-transform 0.4s 0s, opacity 0.1s 0.3s;
+    transition: transform 0.4s 0s, opacity 0.1s 0.3s; }
+
+  .cd-vertical-nav a.active::before, .no-touch .cd-vertical-nav a:hover::before {
+    background-color: #36a6cf; }
+
+  .cd-vertical-nav li:first-of-type a::after {
+    /* change icon using image sprites */
+    background-position: 0px -48px;
+    /* fix bug with transitions - set scale(0.01) rather than scale(0) */
+    -webkit-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+    -moz-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+    -ms-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+    -o-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+    transform: translateX(-50%) translateY(4.5em) scale(0.01); }
+
+  .cd-vertical-nav li:first-of-type a::before {
+    -webkit-transform: translateX(-50%) translateY(4.5em) scale(0.25);
+    -moz-transform: translateX(-50%) translateY(4.5em) scale(0.25);
+    -ms-transform: translateX(-50%) translateY(4.5em) scale(0.25);
+    -o-transform: translateX(-50%) translateY(4.5em) scale(0.25);
+    transform: translateX(-50%) translateY(4.5em) scale(0.25); }
+
+  .cd-vertical-nav li:nth-of-type(2) a::after {
+    background-position: 0px -32px;
+    -webkit-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+    -moz-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+    -ms-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+    -o-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+    transform: translateX(-50%) translateY(1.5em) scale(0.01); }
+
+  .cd-vertical-nav li:nth-of-type(2) a::before {
+    -webkit-transform: translateX(-50%) translateY(1.5em) scale(0.25);
+    -moz-transform: translateX(-50%) translateY(1.5em) scale(0.25);
+    -ms-transform: translateX(-50%) translateY(1.5em) scale(0.25);
+    -o-transform: translateX(-50%) translateY(1.5em) scale(0.25);
+    transform: translateX(-50%) translateY(1.5em) scale(0.25); }
+
+  .cd-vertical-nav li:nth-of-type(3) a::after {
+    background-position: 0px -16px;
+    -webkit-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+    -moz-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+    -ms-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+    -o-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+    transform: translateX(-50%) translateY(-1.5em) scale(0.01); }
+
+  .cd-vertical-nav li:nth-of-type(3) a::before {
+    -webkit-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
+    -moz-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
+    -ms-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
+    -o-transform: translateX(-50%) translateY(-1.5em) scale(0.25);
+    transform: translateX(-50%) translateY(-1.5em) scale(0.25); }
+
+  .cd-vertical-nav li:nth-of-type(4) a::after {
+    background-position: 0px 0px;
+    -webkit-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+    -moz-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+    -ms-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+    -o-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+    transform: translateX(-50%) translateY(-4.5em) scale(0.01); }
+
+  .cd-vertical-nav li:nth-of-type(4) a::before {
+    -webkit-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
+    -moz-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
+    -ms-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
+    -o-transform: translateX(-50%) translateY(-4.5em) scale(0.25);
+    transform: translateX(-50%) translateY(-4.5em) scale(0.25); }
+
+  .cd-vertical-nav .label-iit {
+    display: block;
+    /* Force Hardware Acceleration */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+    position: relative;
+    right: -22px;
+    font-size: 14px; }
+
+  .no-touch .cd-vertical-nav:hover a::before, .no-touch .cd-vertical-nav:hover a::after, .touch .cd-vertical-nav li:nth-of-type(n) a::before, .touch .cd-vertical-nav li:nth-of-type(n) a::after {
+    -webkit-transform: translateX(-50%) scale(1);
+    -moz-transform: translateX(-50%) scale(1);
+    -ms-transform: translateX(-50%) scale(1);
+    -o-transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(1);
+    /* set a rotation to fix bug on Firefox - http://gielberkers.com/how-to-fix-shaking-css-transitions-in-firefox/ */
+    -moz-transform: translateX(-50%) scale(1) rotate(0.02deg); }
+
+  .no-touch .cd-vertical-nav:hover a::after, .touch .cd-vertical-nav a::after {
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.4s, opacity 0s;
+    -moz-transition: -moz-transform 0.4s, opacity 0s;
+    transition: transform 0.4s, opacity 0s; }
+
+  .no-touch .cd-vertical-nav:hover .label-iit, .touch .cd-vertical-nav .label-iit {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    padding-top: 13px;
+    right: 0px; } }
+/* -------------------------------- 
+
+Content Sections - basic style
+
+-------------------------------- */
+.cd-section {
+  /* vertically align its content*/
+  display: table;
+  width: 100%;
+  height: 100vh;
+  background: #3a2c41; }
+
+.cd-section:nth-of-type(even) {
+  background-color: #70557e; }
+
+.cd-section > div {
+  /* vertically align <div> inside <section> */
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
+
+.cd-section h1, .cd-section h2 {
+  width: 90%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  line-height: 1.4; }
+
+.cd-section h1 b, .cd-section h2 b {
+  color: #584c5e; }
+
+.cd-section p {
+  margin: 1em auto 0;
+  line-height: 1.6;
+  width: 90%;
+  max-width: 680px;
+  color: rgba(234, 242, 227, 0.6); }
+
+@media only screen and (min-width: 800px) {
+  .cd-section h1, .cd-section h2 {
+    font-size: 3rem; }
+
+  .cd-section p {
+    font-size: 2rem; } }
+.cd-scroll-down {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  background: url(@base_url@/css/../images/svg/cd-arrow-bottom.svg) no-repeat center center; }
+
+/* -------------------------------- 
+
+no-js
+
+-------------------------------- */
+.no-js .cd-nav-trigger {
+  display: none; }
+
+.no-js .cd-vertical-nav {
+  position: static;
+  height: auto;
+  width: 100%;
+  max-width: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 0;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1); }
+
+.no-js .cd-vertical-nav::before {
+  display: none; }
+
+.no-js .cd-vertical-nav ul::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.no-js .cd-vertical-nav li {
+  display: inline-block;
+  float: left; }
+
+.no-js .cd-vertical-nav a {
+  padding: 0 1em;
+  margin: 1.5em 1em;
+  color: #eaf2e3; }
+
+.no-js .cd-vertical-nav a.active {
+  color: #c0a672; }
+
+.no-js .cd-vertical-nav a::after, .no-js .cd-vertical-nav a::before {
+  display: none; }
+
+.no-js .cd-vertical-nav .label-iit {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0); }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 /*
 
 Theme Name: Intregalit
@@ -9908,15 +10440,94 @@ nav {
 .aui #banner ul li {
   float: left; }
 
+#banner {
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 4; }
+
+.MostrarMenu #banner {
+  background: rgba(0, 0, 0, 0.19) none repeat scroll 0 0; }
+
+@keyframes esconder {
+  0% {
+    left: 0px;
+    opacity: 1; }
+
+  100% {
+    left: -200px;
+    opacity: 0; } }
+
+.EsconderMenu .logo {
+  width: 162px;
+  position: relative;
+  animation-name: esconder;
+  animation-duration: 2s;
+  opacity: 0; }
+
+/* The element to apply the animation to */
+.MostrarMenu .logo {
+  width: 162px;
+  position: relative;
+  animation-name: mostrar;
+  animation-duration: 2s; }
+
+@keyframes mostrar {
+  0% {
+    left: -200px;
+    opacity: 0; }
+
+  100% {
+    left: 0px;
+    opacity: 1; } }
+
 .parallax-container {
   height: 300px;
   z-index: 0; }
 
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Bebas Neue"), url("@base_url@/css/../fonts/BebasNeue.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Bebas Neue Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Bebas Neue Book"), url("@base_url@/css/../fonts/BebasNeue Book.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Light"), url("@base_url@/css/../fonts/Proxima Nova Light.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Regular"), url("@base_url@/css/../fonts/Proxima Nova Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Bold"), url("@base_url@/css/../fonts/Proxima Nova Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Extrabold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Extrabold"), url("@base_url@/css/../fonts/ProximaNova-Xbold.woff") format("woff"); }
+
 /*:::::::: :: MENU HORIZONTAL :: :::::::::::*/
-/*.aui ul.nav-wrapper-iit{
-    margin: 0;
-    padding: 0;
-}*/
+.aui ul.nav-wrapper-iit {
+  margin: 0;
+  padding: 0; }
+
 .nav-wrapper-iit {
   list-style: none;
   float: right; }
@@ -9925,7 +10536,6 @@ nav {
   float: left;
   overflow: hidden;
   width: 0px;
-  border: 1px solid red;
   height: 70px; }
 
 .nav-iit {
@@ -9959,7 +10569,17 @@ nav {
   height: 26px;
   width: 26px;
   float: left;
-  margin: 23px 28px; }
+  margin: 23px 28px;
+  animation-name: volverrotar;
+  animation-duration: 2s;
+  transform: rotate(0deg); }
+
+@keyframes volverrotar {
+  0% {
+    transform: rotate(270deg); }
+
+  100% {
+    transform: rotate(0deg); } }
 
 .nav-wrapper-iit.active > #menu-iit {
   background-color: rgba(54, 36, 91, 0.5);
@@ -9971,15 +10591,182 @@ nav {
   width: 100%; }
 
 .nav-wrapper-iit.active > #menu-iit .ico-menu {
-  transform: rotate(450deg); }
+  animation-name: rotar;
+  animation-duration: 2s;
+  transform: rotate(270deg); }
 
-/*:::::::::::: ::::: :: :CSS PRUEBA : : : :::::*/
+@keyframes rotar {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(270deg); } }
+
+/*:::::::::::: NAVEGACION HOME : : : :::::*/
 body {
   height: 6000px;
   font-family: Helvetica, Arial; }
 
+p {
+  font-size: 12px; }
+
+.iit-container {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+
+.iit-hidden {
+  display: none; }
+
+.iit-element {
+  position: absolute; }
+
+.panel-center {
+  height: 700px; }
+
+.panel-center .fullscreen {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+
+.panel-center .fullscreen::after {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/image-overlay.png") repeat-x scroll 0 bottom;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.panel-center .shell {
+  display: table;
+  height: 100%;
+  pointer-events: none;
+  vertical-align: middle; }
+
+.shell {
+  margin: 0 auto;
+  width: 960px; }
+
+.panel-center-inner {
+  display: table-cell;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+  z-index: 2; }
+
+.panel-center h1 {
+  color: #fff;
+  font-family: "Bebas Neue";
+  font-size: 140px;
+  font-weight: normal;
+  line-height: 128px;
+  padding-bottom: 40px;
+  text-align: center; }
+
+.panel-head-inner h2 {
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 52px;
+  font-weight: normal;
+  line-height: 40px;
+  padding: 17px 0; }
+
+.panel-center h3 {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 60px;
+  padding-bottom: 20px;
+  text-align: center; }
+
+.panel-center p, .panel-head-inner p {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  padding-bottom: 14px;
+  text-align: center; }
+
+.panel-head-inner {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center; }
+
+/*:::::: :: NOSOTROS IIT :: :::::::*/
+.content-metodologia-iit {
+  background: #373737 url("@base_url@/css/../images/iit/bg-nuestra-metodologia.jpg") no-repeat scroll 0 140px;
+  float: left;
+  height: 100%;
+  width: 100%; }
+
+.metodologia {
+  color: #fff;
+  float: left;
+  height: 770px;
+  padding: 0 20px;
+  text-align: center;
+  width: 295px; }
+
+.metodologia h2 {
+  font-family: "Bebas Neue Book",sans-serif;
+  font-weight: normal;
+  font-size: 22px;
+  padding-bottom: 15px; }
+
+.metodologia-arrow {
+  height: 150px;
+  position: absolute;
+  width: 150px;
+  z-index: 2; }
+
+.metodologia-primero {
+  padding-top: 50px; }
+
+.metodologia-arrow-1 {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/services-arrow.png") no-repeat scroll 0 0;
+  left: 17%;
+  top: 35%; }
+
+.metodologia-segundo {
+  padding-top: 125px;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.metodologia-arrow-2 {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/services-arrow-2.png") no-repeat scroll 0 0;
+  bottom: 3%;
+  left: 41%; }
+
+.metodologia-segundo p {
+  padding-top: 60px;
+  padding-bottom: 40px; }
+
+.metodologia-tercero {
+  padding-top: 50px; }
+
+.metodologia-arrow-3 {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/services-arrow-3.png") no-repeat scroll 0 0;
+  left: 65%;
+  top: 19%; }
+
+.metodologia-cuarto {
+  padding-top: 125px;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.metodologia-cuarto p {
+  padding-top: 60px;
+  padding-bottom: 40px; }
+
 #top-menu {
-  background: white none repeat scroll 0 0;
   position: fixed;
   right: 0;
   top: 100px;
@@ -10026,15 +10813,26 @@ body {
 #top-menu li.active a {
   color: #333; }
 
-#foo {
-  position: absolute;
-  top: 400px; }
+#nosotros {
+  float: left;
+  width: 100%; }
 
-#bar {
-  position: absolute;
-  top: 800px; }
+#servicios {
+  float: left;
+  min-height: 800px;
+  border: 1px solid green;
+  width: 100%; }
 
-#baz {
-  position: absolute;
-  top: 1200px; }
+#clientes {
+  float: left;
+  min-height: 800px;
+  border: 1px solid blue;
+  width: 100%; }
+
+/**Formulario Contacto**/
+.input-formulario {
+  height: 30px !important; }
+
+.modal-body {
+  overflow-y: hidden !important; }
 

@@ -24,6 +24,7 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="$javascript_folder/jquery.1.12.4.min.js"></script>
 	<script src="$javascript_folder/bootstrap.js"></script>
+	<script src="$javascript_folder/modernizr.js"></script>
     <script src="$javascript_folder/funciones.js"></script>
 
 
@@ -47,7 +48,7 @@ $theme.include($body_top_include)
 
     <header id="banner" role="banner">
 
-        
+
 		  #if($theme.getSetting("menu-page") == false)
  				 #parse ("$full_templates_path/navigation.vm")
  		 #else
@@ -86,7 +87,7 @@ $theme.include($bottom_include)
           <h4 class="modal-title">Cont&aacute;ctanos</h4>
         </div>
         <div class="modal-body">
-          
+
 			 <form class="form-horizontal" action=" " method="post"  id="contact_form">
 			      <fieldset>
 			         <!-- Text input-->
@@ -149,7 +150,7 @@ $theme.include($bottom_include)
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 

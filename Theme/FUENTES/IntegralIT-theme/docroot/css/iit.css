@@ -354,12 +354,29 @@ p{
     font-size: 22px;
     padding-bottom: 15px;
 }
+.metodologia-arrow{
+    
+    height: 150px;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+}
 .metodologia-primero {
     padding-top: 50px;
+}
+.metodologia-arrow-1 {
+    background: rgba(0, 0, 0, 0) url("../images/iit/services-arrow.png") no-repeat scroll 0 0;
+    left: 17%;
+    top: 35%;
 }
 .metodologia-segundo{
     padding-top: 125px;
     background-color: rgba(0, 0, 0, 0.4);
+}
+.metodologia-arrow-2{
+    background: rgba(0, 0, 0, 0) url("../images/iit/services-arrow-2.png") no-repeat scroll 0 0;
+    bottom: 3%;
+    left: 41%;
 }
 .metodologia-segundo p{
     padding-top: 60px;
@@ -367,6 +384,11 @@ p{
 }
 .metodologia-tercero{
     padding-top: 50px;
+}
+.metodologia-arrow-3{
+    background: rgba(0, 0, 0, 0) url("../images/iit/services-arrow-3.png") no-repeat scroll 0 0;
+    left: 65%;
+    top: 19%;
 }
 .metodologia-cuarto{
     padding-top: 125px;

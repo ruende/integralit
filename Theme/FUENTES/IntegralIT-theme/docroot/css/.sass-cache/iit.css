@@ -63,15 +63,94 @@ nav {
 .aui #banner ul li {
   float: left; }
 
+#banner {
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 4; }
+
+.MostrarMenu #banner {
+  background: rgba(0, 0, 0, 0.19) none repeat scroll 0 0; }
+
+@keyframes esconder {
+  0% {
+    left: 0px;
+    opacity: 1; }
+
+  100% {
+    left: -200px;
+    opacity: 0; } }
+
+.EsconderMenu .logo {
+  width: 162px;
+  position: relative;
+  animation-name: esconder;
+  animation-duration: 2s;
+  opacity: 0; }
+
+/* The element to apply the animation to */
+.MostrarMenu .logo {
+  width: 162px;
+  position: relative;
+  animation-name: mostrar;
+  animation-duration: 2s; }
+
+@keyframes mostrar {
+  0% {
+    left: -200px;
+    opacity: 0; }
+
+  100% {
+    left: 0px;
+    opacity: 1; } }
+
 .parallax-container {
   height: 300px;
   z-index: 0; }
 
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Bebas Neue"), url("../fonts/BebasNeue.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Bebas Neue Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Bebas Neue Book"), url("../fonts/BebasNeue Book.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Light"), url("../fonts/Proxima Nova Light.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Regular"), url("../fonts/Proxima Nova Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Bold"), url("../fonts/Proxima Nova Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Proxima Nova Extrabold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("../fonts/Proxima Nova Extrabold"), url("../fonts/ProximaNova-Xbold.woff") format("woff"); }
+
 /*:::::::: :: MENU HORIZONTAL :: :::::::::::*/
-/*.aui ul.nav-wrapper-iit{
-    margin: 0;
-    padding: 0;
-}*/
+.aui ul.nav-wrapper-iit {
+  margin: 0;
+  padding: 0; }
+
 .nav-wrapper-iit {
   list-style: none;
   float: right; }
@@ -80,7 +159,6 @@ nav {
   float: left;
   overflow: hidden;
   width: 0px;
-  border: 1px solid red;
   height: 70px; }
 
 .nav-iit {
@@ -114,7 +192,17 @@ nav {
   height: 26px;
   width: 26px;
   float: left;
-  margin: 23px 28px; }
+  margin: 23px 28px;
+  animation-name: volverrotar;
+  animation-duration: 2s;
+  transform: rotate(0deg); }
+
+@keyframes volverrotar {
+  0% {
+    transform: rotate(270deg); }
+
+  100% {
+    transform: rotate(0deg); } }
 
 .nav-wrapper-iit.active > #menu-iit {
   background-color: rgba(54, 36, 91, 0.5);
@@ -126,15 +214,182 @@ nav {
   width: 100%; }
 
 .nav-wrapper-iit.active > #menu-iit .ico-menu {
-  transform: rotate(450deg); }
+  animation-name: rotar;
+  animation-duration: 2s;
+  transform: rotate(270deg); }
 
-/*:::::::::::: ::::: :: :CSS PRUEBA : : : :::::*/
+@keyframes rotar {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(270deg); } }
+
+/*:::::::::::: NAVEGACION HOME : : : :::::*/
 body {
   height: 6000px;
   font-family: Helvetica, Arial; }
 
+p {
+  font-size: 12px; }
+
+.iit-container {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+
+.iit-hidden {
+  display: none; }
+
+.iit-element {
+  position: absolute; }
+
+.panel-center {
+  height: 700px; }
+
+.panel-center .fullscreen {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+
+.panel-center .fullscreen::after {
+  background: rgba(0, 0, 0, 0) url("../images/iit/image-overlay.png") repeat-x scroll 0 bottom;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.panel-center .shell {
+  display: table;
+  height: 100%;
+  pointer-events: none;
+  vertical-align: middle; }
+
+.shell {
+  margin: 0 auto;
+  width: 960px; }
+
+.panel-center-inner {
+  display: table-cell;
+  height: 100%;
+  position: relative;
+  vertical-align: middle;
+  z-index: 2; }
+
+.panel-center h1 {
+  color: #fff;
+  font-family: "Bebas Neue";
+  font-size: 140px;
+  font-weight: normal;
+  line-height: 128px;
+  padding-bottom: 40px;
+  text-align: center; }
+
+.panel-head-inner h2 {
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 52px;
+  font-weight: normal;
+  line-height: 40px;
+  padding: 17px 0; }
+
+.panel-center h3 {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 60px;
+  padding-bottom: 20px;
+  text-align: center; }
+
+.panel-center p, .panel-head-inner p {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  padding-bottom: 14px;
+  text-align: center; }
+
+.panel-head-inner {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center; }
+
+/*:::::: :: NOSOTROS IIT :: :::::::*/
+.content-metodologia-iit {
+  background: #373737 url("../images/iit/bg-nuestra-metodologia.jpg") no-repeat scroll 0 140px;
+  float: left;
+  height: 100%;
+  width: 100%; }
+
+.metodologia {
+  color: #fff;
+  float: left;
+  height: 770px;
+  padding: 0 20px;
+  text-align: center;
+  width: 295px; }
+
+.metodologia h2 {
+  font-family: "Bebas Neue Book",sans-serif;
+  font-weight: normal;
+  font-size: 22px;
+  padding-bottom: 15px; }
+
+.metodologia-arrow {
+  height: 150px;
+  position: absolute;
+  width: 150px;
+  z-index: 2; }
+
+.metodologia-primero {
+  padding-top: 50px; }
+
+.metodologia-arrow-1 {
+  background: rgba(0, 0, 0, 0) url("../images/iit/services-arrow.png") no-repeat scroll 0 0;
+  left: 17%;
+  top: 35%; }
+
+.metodologia-segundo {
+  padding-top: 125px;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.metodologia-arrow-2 {
+  background: rgba(0, 0, 0, 0) url("../images/iit/services-arrow-2.png") no-repeat scroll 0 0;
+  bottom: 3%;
+  left: 41%; }
+
+.metodologia-segundo p {
+  padding-top: 60px;
+  padding-bottom: 40px; }
+
+.metodologia-tercero {
+  padding-top: 50px; }
+
+.metodologia-arrow-3 {
+  background: rgba(0, 0, 0, 0) url("../images/iit/services-arrow-3.png") no-repeat scroll 0 0;
+  left: 65%;
+  top: 19%; }
+
+.metodologia-cuarto {
+  padding-top: 125px;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.metodologia-cuarto p {
+  padding-top: 60px;
+  padding-bottom: 40px; }
+
 #top-menu {
-  background: white none repeat scroll 0 0;
   position: fixed;
   right: 0;
   top: 100px;
@@ -181,15 +436,26 @@ body {
 #top-menu li.active a {
   color: #333; }
 
-#foo {
-  position: absolute;
-  top: 400px; }
+#nosotros {
+  float: left;
+  width: 100%; }
 
-#bar {
-  position: absolute;
-  top: 800px; }
+#servicios {
+  float: left;
+  min-height: 800px;
+  border: 1px solid green;
+  width: 100%; }
 
-#baz {
-  position: absolute;
-  top: 1200px; }
+#clientes {
+  float: left;
+  min-height: 800px;
+  border: 1px solid blue;
+  width: 100%; }
+
+/**Formulario Contacto**/
+.input-formulario {
+  height: 30px !important; }
+
+.modal-body {
+  overflow-y: hidden !important; }
 

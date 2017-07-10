@@ -18,6 +18,10 @@
 
 @import url(custom.css);
 
+@import url(navegacion.css);
+
+@import url(reset.css);
+
 @import url(generico_iit.css);
 
 @import url(iit.css);
