@@ -39,14 +39,26 @@
 							<b class="caret"></b>
 						</a>
 					#else
-						<a
-						aria-labelledby="layout_$nav_item.getLayoutId()"
-						href="$nav_item.getURL()"
-						$nav_item_attr_has_popup
-						$nav_item.getTarget()
-						role="menuitem">
-							<span>$nav_item.icon() $nav_item.getName()</span>
-						</a>
+						#if($nav_item.getName()=="Contacto")
+							<a
+							data-toggle="modal" data-target="#myModal"
+							style="cursor:pointer;"
+							aria-labelledby="layout_$nav_item.getLayoutId()"
+							$nav_item_attr_has_popup
+							$nav_item.getTarget()
+							role="menuitem">
+								<span>$nav_item.icon() $nav_item.getName()</span>
+							</a>
+						#else	
+							<a
+							aria-labelledby="layout_$nav_item.getLayoutId()"
+							href="$nav_item.getURL()"
+							$nav_item_attr_has_popup
+							$nav_item.getTarget()
+							role="menuitem">
+								<span>$nav_item.icon() $nav_item.getName()</span>
+							</a>
+						#end
 					#end
 
 					<!-- Nivel 1 -->
@@ -127,4 +139,8 @@
 </div>
 <script>
 	Liferay.Data.NAV_LIST_SELECTOR = '.navbar-inner .nav-collapse > ul';
+	
+	function displayFormContacto(){
+		$("#myModal").show();
+	}
 </script>

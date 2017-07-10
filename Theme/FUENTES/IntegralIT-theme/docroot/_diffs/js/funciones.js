@@ -41,6 +41,16 @@ $( document ).ready(function() {
 	   cur = cur[cur.length-1];
 	   var id = cur && cur.length ? cur[0].id : "";
 	   
+	   //logica aparece desaparece menu
+	   if(id == ""){
+		   $("body").addClass("MostrarMenu");
+		   $("body").removeClass("EsconderMenu");
+	   }
+	   else{
+		   $("body").removeClass("MostrarMenu");
+		   $("body").addClass("EsconderMenu");
+	   }
+	   
 	   if (lastId !== id) {
 	       lastId = id;
 	       // Set/remove active class
