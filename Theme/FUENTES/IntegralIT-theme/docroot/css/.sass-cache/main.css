@@ -10677,7 +10677,7 @@ p {
   font-size: 52px;
   font-weight: normal;
   line-height: 40px;
-  padding: 17px 0; }
+  padding: 10px 0 0; }
 
 .panel-center h3 {
   color: #fff;
@@ -10693,7 +10693,7 @@ p {
   font-family: "Bebas Neue Book",sans-serif;
   font-size: 22px;
   line-height: 22px;
-  padding-bottom: 14px;
+  padding-bottom: 4px;
   text-align: center; }
 
 .panel-head-inner {
@@ -10704,7 +10704,7 @@ p {
 
 /*:::::: :: NOSOTROS IIT :: :::::::*/
 .content-metodologia-iit {
-  background: #373737 url("@base_url@/css/../images/iit/bg-nuestra-metodologia.jpg") no-repeat scroll 0 140px;
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/bg-nuestra-metodologia.jpg") no-repeat fixed 0 0/cover;
   float: left;
   height: 100%;
   width: 100%; }
@@ -10712,16 +10712,18 @@ p {
 .metodologia {
   color: #fff;
   float: left;
-  height: 770px;
-  padding: 0 20px;
+  height: 592px;
+  padding: 0 10px;
   text-align: center;
   width: 295px; }
+
+.metodologia-img {
+  width: 50%; }
 
 .metodologia h2 {
   font-family: "Bebas Neue Book",sans-serif;
   font-weight: normal;
-  font-size: 22px;
-  padding-bottom: 15px; }
+  font-size: 22px; }
 
 .metodologia-arrow {
   height: 150px;
@@ -10734,20 +10736,20 @@ p {
 
 .metodologia-arrow-1 {
   background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/services-arrow.png") no-repeat scroll 0 0;
-  left: 17%;
-  top: 35%; }
+  left: 15%;
+  top: 23%; }
 
 .metodologia-segundo {
-  padding-top: 125px;
+  padding-top: 70px;
   background-color: rgba(0, 0, 0, 0.4); }
 
 .metodologia-arrow-2 {
   background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/services-arrow-2.png") no-repeat scroll 0 0;
-  bottom: 3%;
+  bottom: 13%;
   left: 41%; }
 
 .metodologia-segundo p {
-  padding-top: 60px;
+  padding-top: 35px;
   padding-bottom: 40px; }
 
 .metodologia-tercero {
@@ -10755,15 +10757,15 @@ p {
 
 .metodologia-arrow-3 {
   background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/services-arrow-3.png") no-repeat scroll 0 0;
-  left: 65%;
-  top: 19%; }
+  left: 66%;
+  top: 14%; }
 
 .metodologia-cuarto {
   padding-top: 125px;
   background-color: rgba(0, 0, 0, 0.4); }
 
 .metodologia-cuarto p {
-  padding-top: 60px;
+  padding-top: 15px;
   padding-bottom: 40px; }
 
 #top-menu {
@@ -10815,11 +10817,12 @@ p {
 
 #nosotros {
   float: left;
-  width: 100%; }
+  width: 100%;
+  height: 700px;
+  border: 1px solid yellow; }
 
 #servicios {
   float: left;
-  min-height: 800px;
   border: 1px solid green;
   width: 100%; }
 
@@ -10830,9 +10833,34 @@ p {
   width: 100%; }
 
 /**Formulario Contacto**/
+#myModal {
+  display: none; }
+
 .input-formulario {
   height: 30px !important; }
 
 .modal-body {
   overflow-y: hidden !important; }
+
+/*:::::: :::: NOSOTROS :::: ::::::::*/
+.panel-center-inner h1 {
+  color: #fff;
+  font-family: "Bebas Neue";
+  font-size: 47px;
+  font-weight: normal;
+  line-height: 33px;
+  text-align: center; }
+
+.panel-center-inner h3 {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 44px;
+  text-align: center; }
+
+#testimonials {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/testimonials-bg.jpg") repeat fixed 0 0/cover;
+  color: #ddd;
+  padding: 140px 0; }
 
