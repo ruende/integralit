@@ -20,7 +20,15 @@ Main Stylesheet file is located at assets/stylesheet/core-styles.css
 */
 
 /*::::: :: GENERICOS :: :::::*/
-
+p.normal{
+	font-size: 16px
+}
+p.small{
+	font-size: 12px;
+}
+.justify{
+	text-align: justify;
+}
 .padding-5{padding: 5px;}.paddingTop-5{padding-top: 5px;}.paddingRight-5{padding-right: 5px;}.paddingbottom-5{padding-bottom: 5px;}.paddingLeft-5{padding-left: 5px;}
 .padding-10{padding: 10px;}.paddingTop-10{padding-top: 10px;}.paddingRight-10{padding-right: 10px;}.paddingbottom-10{padding-bottom: 10px;}.paddingLeft-10{padding-left: 10px;}
 .padding-20{padding: 20px;}.paddingTop-20{padding-top: 20px;}.paddingRight-20{padding-right: 20px;}.paddingbottom-20{padding-bottom: 20px;}.paddingLeft-20{padding-left: 20px;}

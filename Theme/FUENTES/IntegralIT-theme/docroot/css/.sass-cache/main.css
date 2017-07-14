@@ -9882,6 +9882,15 @@ Domain Path: /languages/
 Main Stylesheet file is located at assets/stylesheet/core-styles.css
 */
 /*::::: :: GENERICOS :: :::::*/
+p.normal {
+  font-size: 16px; }
+
+p.small {
+  font-size: 12px; }
+
+.justify {
+  text-align: justify; }
+
 .padding-5 {
   padding: 5px; }
 
