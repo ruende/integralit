@@ -432,18 +432,18 @@ Content Sections - basic style
 }
 
 .cd-scroll-down {
-  position: absolute;
+/*  position: absolute;
   left: 50%;
-  right: auto;
+  right: auto;*/
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: 20px;
+/*  bottom: 20px;
   width: 44px;
   height: 44px;
-  background: url(../images/svg/cd-arrow-bottom.svg) no-repeat center center;
+  background: url(../images/svg/cd-arrow-bottom.svg) no-repeat center center;*/
 }
 
 /* -------------------------------- 

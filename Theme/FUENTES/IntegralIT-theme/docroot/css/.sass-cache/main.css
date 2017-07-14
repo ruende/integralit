@@ -9750,18 +9750,18 @@ Content Sections - basic style
   .cd-section p {
     font-size: 2rem; } }
 .cd-scroll-down {
-  position: absolute;
-  left: 50%;
-  right: auto;
+  /*  position: absolute;
+    left: 50%;
+    right: auto;*/
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: 20px;
-  width: 44px;
-  height: 44px;
-  background: url(@base_url@/css/../images/svg/cd-arrow-bottom.svg) no-repeat center center; }
+  /*  bottom: 20px;
+    width: 44px;
+    height: 44px;
+    background: url(@base_url@/css/../images/svg/cd-arrow-bottom.svg) no-repeat center center;*/ }
 
 /* -------------------------------- 
 
@@ -10402,6 +10402,44 @@ nav {
   nav a {
     padding: 17px 20px !important; }
 
+.bg_section_title {
+  background: #6a9e9a none repeat scroll 0 0;
+  width: 100%;
+  height: 90px; }
+
+.bg_section_product {
+  float: left;
+  padding: 0 15px;
+  width: 100%; }
+
+.bg_image_iit {
+  background-attachment: fixed;
+  background-clip: border-box;
+  background-image: url("@base_url@/css/../images/iit/bg-1.jpg");
+  background-origin: padding-box;
+  background-repeat: repeat;
+  background-size: cover; }
+
+.bg_color_white {
+  background-attachment: fixed;
+  background-clip: border-box;
+  background-image: url("@base_url@/css/../images/iit/bg-2.jpg");
+  background-origin: padding-box;
+  background-repeat: repeat;
+  background-size: cover; }
+
+.bg-blackRed {
+  background-color: rgba(54, 0, 0, 0.5); }
+
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.color-black .section-title h3 {
+  color: #000; }
+
+.mk-circle-image {
+  text-align: center; }
+
 .cont-numeros {
   text-align: center; }
 
@@ -10426,6 +10464,22 @@ nav {
 
 .cont-numeros .numeros-cotizacion span {
   color: #7e299e; }
+
+.section-title h1 {
+  color: #fff;
+  font-family: "Bebas Neue";
+  font-size: 47px;
+  font-weight: normal;
+  line-height: 33px;
+  text-align: center; }
+
+.section-title h3 {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif;
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 32px;
+  text-align: center; }
 
 .cont-numeros span {
   display: block;
@@ -10553,8 +10607,12 @@ nav {
 
 .nav-iit > li {
   float: left;
-  width: 50px;
-  margin: 0 5px; }
+  margin: 0 5px;
+  padding: 0 15px; }
+
+.nav-iit > li a {
+  color: #fff;
+  font-family: "Bebas Neue Book",sans-serif; }
 
 #menu-iit {
   background: rgba(0, 0, 0, 0.19) none repeat scroll 0 0;
@@ -10677,7 +10735,9 @@ p {
   font-size: 52px;
   font-weight: normal;
   line-height: 40px;
-  padding: 10px 0 0; }
+  padding: 10px 0 0;
+  text-align: center;
+  color: #fff; }
 
 .panel-center h3 {
   color: #fff;
@@ -10697,17 +10757,23 @@ p {
   text-align: center; }
 
 .panel-head-inner {
-  display: table-cell;
-  height: 100%;
-  vertical-align: middle;
-  text-align: center; }
+  padding: 5px 0;
+  text-align: center;
+  width: 100%; }
 
 /*:::::: :: NOSOTROS IIT :: :::::::*/
 .content-metodologia-iit {
-  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/bg-nuestra-metodologia.jpg") no-repeat fixed 0 0/cover;
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/testimonials-bg.jpg") repeat fixed 0 0/cover;
   float: left;
   height: 100%;
   width: 100%; }
+
+.bg-metodologia {
+  background: rgba(0, 0, 0, 0.5); }
+
+.content-metodologia-iit .shell {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3); }
 
 .metodologia {
   color: #fff;
@@ -10741,7 +10807,7 @@ p {
 
 .metodologia-segundo {
   padding-top: 70px;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.3); }
 
 .metodologia-arrow-2 {
   background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/services-arrow-2.png") no-repeat scroll 0 0;
@@ -10762,7 +10828,7 @@ p {
 
 .metodologia-cuarto {
   padding-top: 125px;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.3); }
 
 .metodologia-cuarto p {
   padding-top: 15px;
@@ -10842,7 +10908,86 @@ p {
 .modal-body {
   overflow-y: hidden !important; }
 
+/*:::::: :::: EFECTO RADAR :::: ::::::::*/
+.radar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 50px;
+  height: 50px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-animation: radar 2s infinite;
+  animation: radar 2s infinite;
+  opacity: 0;
+  overflow: hidden; }
+
+.radar:nth-child(2) {
+  animation-delay: .4s; }
+
+.radar:nth-child(3) {
+  animation-delay: .9s; }
+
+.radar:nth-child(4) {
+  animation-delay: .15s; }
+
+@keyframes radar {
+  0% {
+    width: 50px;
+    height: 50px;
+    border: 40px solid #fff;
+    opacity: 0; }
+
+  50% {
+    opacity: 0.1; }
+
+  90% {
+    width: 200px;
+    height: 200px; }
+
+  90%,100% {
+    border: 2px  solid #fff;
+    opacity: 0; }
+
+  100% {
+    width: 250px;
+    height: 250px; } }
+
 /*:::::: :::: NOSOTROS :::: ::::::::*/
+.ico-double-down > h3 {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 18px;
+  line-height: 0;
+  margin-top: 60px; }
+
+.cont-boton-down-metodologia {
+  bottom: 5%;
+  height: 28%;
+  left: 37%;
+  position: absolute;
+  width: 29%; }
+
+.ico-double-down a {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 5em;
+  margin-left: 44px; }
+
+.ico-double-down a:hover {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none; }
+
+.nosotros-inicio {
+  background: black url("@base_url@/css/../images/iit/bg-nosotros.jpg") no-repeat fixed center center/cover;
+  color: #fff;
+  display: table;
+  height: 700px;
+  padding: 250px 0;
+  text-align: center;
+  width: 100%; }
+
 .panel-center-inner h1 {
   color: #fff;
   font-family: "Bebas Neue";
@@ -10854,13 +10999,79 @@ p {
 .panel-center-inner h3 {
   color: #fff;
   font-family: "Bebas Neue Book",sans-serif;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: normal;
-  line-height: 44px;
+  line-height: 32px;
   text-align: center; }
 
 #testimonials {
   background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/testimonials-bg.jpg") repeat fixed 0 0/cover;
   color: #ddd;
   padding: 140px 0; }
+
+/*SERVICIOS*/
+#servicios {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/bg-servicios.jpg") repeat fixed 0 0/cover;
+  color: #ddd;
+  padding: 140px 0;
+  height: 700px; }
+
+/*****NUESTROS TRABAJOS*****/
+.cont-nt {
+  width: 100% !important;
+  height: 700px;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.div-titulo-contenido {
+  height: auto;
+  padding-top: 4%; }
+
+.div-tags, .btn-galeria, .btn-sgte-proyecto {
+  height: 25px;
+  margin-top: 20px; }
+
+.div-titulo-contenido, .div-tags, .btn-galeria, .btn-sgte-proyecto {
+  background-color: #2E2E2E;
+  color: #FFFFFF;
+  opacity: 0.90; }
+
+.force-bottom-0 {
+  position: absolute;
+  bottom: 2.3em;
+  left: 0;
+  width: 600px; }
+
+.force-bottom-1 {
+  position: absolute;
+  bottom: 0;
+  right: 22px;
+  width: 300px; }
+
+/*:::::: ::: SERVICIOS ::: ::::::::*/
+.mk-circle-image .item-holder {
+  box-shadow: 0 0 0 1px #57a4c9; }
+
+.mk-circle-image .item-holder {
+  border-radius: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  overflow: hidden; }
+
+/***INICIO CSS BOTON HACIA ARRIBA***/
+.scrollup {
+  background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/scrollup.png") no-repeat scroll 26px 3px;
+  bottom: 50px;
+  display: none;
+  height: 40px;
+  opacity: 0.3;
+  padding: 18px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  text-indent: -9999px;
+  width: 83px;
+  z-index: 4; }
+
+/***FIN CSS BOTON HACIA ARRIBA***/
 
