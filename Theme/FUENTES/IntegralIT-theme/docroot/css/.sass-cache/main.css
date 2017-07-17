@@ -10412,7 +10412,7 @@ nav {
     padding: 17px 20px !important; }
 
 .bg_section_title {
-  background: #6a9e9a none repeat scroll 0 0;
+  background: #212a33 none repeat scroll 0 0;
   width: 100%;
   height: 90px; }
 
@@ -10437,13 +10437,19 @@ nav {
   background-repeat: repeat;
   background-size: cover; }
 
-.bg-blackRed {
-  background-color: rgba(54, 0, 0, 0.5); }
+.bg-Red {
+  background-color: rgba(231, 89, 89, 0.98); }
+
+.bg-purple {
+  background-color: rgba(106, 85, 142, 0.98); }
+
+.bg-green {
+  background-color: rgba(106, 183, 142, 0.98); }
 
 .bg-black {
   background-color: rgba(0, 0, 0, 0.5); }
 
-.color-black .section-title h3 {
+.color-black .section-title h3, .color-black .section-title h1 {
   color: #000; }
 
 .mk-circle-image {
@@ -10843,6 +10849,28 @@ p {
   padding-top: 15px;
   padding-bottom: 40px; }
 
+/*NUEVA METODOLOGIA*/
+.aui #contenedor_metodologia_iit {
+  float: left;
+  height: 700px;
+  overflow: hidden; }
+.aui .carousel-control {
+  border: 0 none;
+  border-radius: 0;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  width: 60px; }
+.aui .carousel-caption {
+  /*background: rgba(0, 0, 0, 0.75) none repeat scroll 0 0;*/
+  bottom: 0;
+  left: 20%;
+  padding: 15px;
+  right: 20%;
+  top: 0; }
+
 #top-menu {
   position: fixed;
   right: 0;
@@ -10908,6 +10936,68 @@ p {
   width: 100%; }
 
 /**Formulario Contacto**/
+.aui #myModal.modal {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0; }
+  .aui #myModal.modal .modal-header {
+    border: medium none; }
+    .aui #myModal.modal .modal-header h4 {
+      color: #fff;
+      font-family: "Bebas Neue Book",sans-serif;
+      font-size: 36px;
+      font-weight: normal;
+      text-align: center; }
+  .aui #myModal.modal .modal-body {
+    max-height: 800px; }
+  .aui #myModal.modal .input-group-addon {
+    display: none; }
+  .aui #myModal.modal .close {
+    background: rgba(0, 0, 0, 0) url("@base_url@/css/../images/iit/ico-cerrar.png") no-repeat scroll 0 0;
+    height: 32px;
+    position: absolute;
+    right: -20%;
+    text-indent: -9999px;
+    width: 40px; }
+  .aui #myModal.modal .input-group {
+    float: left;
+    width: 100%; }
+  .aui #myModal.modal input[type="text"] {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    border: 1px solid #555555;
+    color: #fff;
+    font-family: "Bebas Neue Book",sans-serif;
+    font-size: 22px;
+    height: 60px !important;
+    text-align: center;
+    text-transform: uppercase; }
+  .aui #myModal.modal textarea {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    border: 1px solid #555555;
+    min-height: 120px !important;
+    color: #fff;
+    text-align: center;
+    font-family: "Bebas Neue Book",sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 20px; }
+  .aui #myModal.modal .btn.btn-primary {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    border: 1px solid #555555;
+    box-shadow: none;
+    padding: 10px;
+    text-shadow: none;
+    width: 100%;
+    font-family: "Bebas Neue Book",sans-serif;
+    font-size: 22px;
+    text-transform: uppercase; }
+  .aui #myModal.modal .btn.btn-primary:hover {
+    background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+    border: 1px solid #3b3b3b; }
+  .aui #myModal.modal .modal-footer {
+    display: none; }
+
 #myModal {
   display: none; }
 
@@ -10966,6 +11056,9 @@ p {
     height: 250px; } }
 
 /*:::::: :::: NOSOTROS :::: ::::::::*/
+.ico-double-down {
+  text-align: center; }
+
 .ico-double-down > h3 {
   color: rgba(255, 255, 255, 0.4);
   font-size: 18px;

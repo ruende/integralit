@@ -3,6 +3,12 @@ $( document ).ready(function() {
    $('#menu-iit').click(function(){
      $('.nav-wrapper-iit').toggleClass('active');
    })
+
+  // DETENER EL CAROUSEL  
+  $('#Metodologia-iit').carousel({
+    pause: true,
+    interval: 40000,
+  });
 //
 //     // Cache selectors
 //	 var lastId,

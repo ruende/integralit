@@ -96,7 +96,7 @@ $theme.include($bottom_include)
 			            <div class="col-md-12 inputGroupContainer">
 			               <div class="input-group">
 			                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-			                  <input  name="first_name" placeholder="Nombre..." class="form-control input-formulario"  type="text">
+			                  <input  name="nombre" id="nombre" placeholder="Nombre..." class="form-control input-formulario"  type="text">
 			               </div>
 			            </div>
 			         </div>
@@ -105,7 +105,7 @@ $theme.include($bottom_include)
 			            <div class="col-md-12 inputGroupContainer">
 			               <div class="input-group">
 			                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-			                  <input name="email" placeholder="Correo electr&oacute;nico" class="form-control input-formulario"  type="text">
+			                  <input name="correo" id="correo" placeholder="Correo electr&oacute;nico" class="form-control input-formulario"  type="text">
 			               </div>
 			            </div>
 			         </div>
@@ -114,7 +114,7 @@ $theme.include($bottom_include)
 			            <div class="col-md-12 inputGroupContainer">
 			               <div class="input-group">
 			                  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-			                  <input name="phone" placeholder="(+569)12345678" class="form-control input-formulario" type="text">
+			                  <input name="telefono" id="telefono" placeholder="(+569)12345678" class="form-control input-formulario" type="text">
 			               </div>
 			            </div>
 			         </div>
@@ -123,7 +123,7 @@ $theme.include($bottom_include)
 			            <div class="col-md-12 inputGroupContainer">
 			               <div class="input-group">
 			                  <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-			                  <input name="direccion" placeholder="Direcci&oacute;n" class="form-control input-formulario" type="text">
+			                  <input name="direccion" id="direccion" placeholder="Direcci&oacute;n" class="form-control input-formulario" type="text">
 			               </div>
 			            </div>
 			         </div>
@@ -132,16 +132,17 @@ $theme.include($bottom_include)
 			            <div class="col-md-12 inputGroupContainer">
 			               <div class="input-group">
 			                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-			                  <textarea class="form-control" name="comment" placeholder="Escribenos tu mensaje..."></textarea>
+			                  <textarea class="form-control" name="mensaje" id="mensaje" placeholder="Escribenos tu mensaje..."></textarea>
 			               </div>
 			            </div>
 			         </div>
 			         <!-- Success message -->
-			         <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up"></i> Gracias por contactarnos, nos pondremos en contacto con usted en breve.</div>
+			         <div class="alert alert-success" role="alert" id="success_message" style="display:none;"><i class="glyphicon glyphicon-thumbs-up"></i><div id="mensaje-exito"></div></div>
+			           <div class="alert alert-error" role="alert" id="error_message" style="display:none;"><div id="mensaje-error"><i class='glyphicon glyphicon-remove'></i></div></div>
 			         <!-- Button -->
 			         <div class="form-group text-center">
 			            <div class="col-md-12 col-sm-12 col-xs-12">
-			               <button type="submit" class="btn btn-primary" >Enviar<span class="glyphicon glyphicon-send"></span></button>
+			               <button type="button" class="btn btn-primary" onclick="enviarForm()" >Enviar<span class="glyphicon glyphicon-send"></span></button>
 			            </div>
 			         </div>
 			      </fieldset>
@@ -157,4 +158,4 @@ $theme.include($bottom_include)
  <a href="#" class="scrollup">Scroll</a>
 </body>
 
-</html>
+</html> 
