@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>6.2.1+</version>
+	</compatibility>
+	<theme id="IntegralIT" name="IntegralIT">
+		<settings>
+			<setting configurable="true" key="full-page" options="true,false" type="select" value="false"></setting>
+			<setting configurable="true" key="menu-page" options="true,false" type="select" value="false"></setting>
+			<setting configurable="true" key="portlet-setup-show-borders-default" options="true,false" type="select" value="true"></setting>
+		</settings>
+	</theme>
+</look-and-feel>

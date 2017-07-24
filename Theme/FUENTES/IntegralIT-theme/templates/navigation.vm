@@ -1,0 +1,146 @@
+
+		 <div class="col-lg-2 box_logo">
+			  <h1 class="site-title">
+					<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+						 <img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+					</a>
+			  </h1>
+		 </div>
+
+<div class="col-lg-10 last">
+<ul class="nav-wrapper-iit">
+	<li class="list-menu-iit">
+		<ul id="nav-bar-iit" class="nav-iit" aria-label="#language ("site-pages")" role="menubar">
+			#foreach ($nav_item in $nav_items)
+				#set ($nav_item_attr_has_popup="")
+				#set ($nav_item_attr_selected="")
+				#set ($nav_item_css_class = "")
+
+				#if ($nav_item.isSelected())
+					#set ($nav_item_attr_selected="aria-selected='true'")
+					#set ($nav_item_css_class = "selected")
+				#end
+
+				#if ($nav_item.hasChildren())
+					#set ($nav_item_attr_has_popup="aria-haspopup='true'")
+					#set ($nav_item_css_class = "dropdown")
+				#end
+
+				<li class="$nav_item_css_class $nav_item.getName()" id="layout_$nav_item.getLayoutId()" $nav_item_attr_selected role="presentation">
+					#if ($nav_item.hasChildren())
+						<a
+						aria-labelledby="layout_$nav_item.getLayoutId()"
+						href="$nav_item.getURL()"
+						$nav_item_attr_has_popup
+						$nav_item.getTarget()
+						role="menuitem"
+						class="dropdown-toggle">
+							<span>$nav_item.icon() $nav_item.getName()</span>
+							<b class="caret"></b>
+						</a>
+					#else
+						#if($nav_item.getName()=="Contacto")
+							<a
+							data-toggle="modal" data-target="#myModal"
+							style="cursor:pointer;"
+							aria-labelledby="layout_$nav_item.getLayoutId()"
+							$nav_item_attr_has_popup
+							$nav_item.getTarget()
+							role="menuitem">
+								<span>$nav_item.icon() $nav_item.getName()</span>
+							</a>
+						#else	
+							<a
+							aria-labelledby="layout_$nav_item.getLayoutId()"
+							href="$nav_item.getURL()"
+							$nav_item_attr_has_popup
+							$nav_item.getTarget()
+							role="menuitem">
+								<span>$nav_item.icon() $nav_item.getName()</span>
+							</a>
+						#end
+					#end
+
+					<!-- Nivel 1 -->
+					#if ($nav_item.hasChildren())
+						<ul class="dropdown-menu" role="menu">
+							#foreach ($nav_child in $nav_item.getChildren())
+								#set ($nav_child_attr_selected="")
+								#set ($nav_child_css_class = "false")
+
+								#if ($nav_child.isSelected())
+									#set ($nav_child_attr_selected="aria-selected='true'")
+									#set ($nav_child_css_class = "selected")
+								#end
+
+								#if ($nav_child.hasChildren())
+									#set ($nav_child_css_class = "dropdown-submenu")
+								#end
+
+								<li class="$nav_child_css_class" id="layout_$nav_child.getLayoutId()" $nav_child_attr_selected role="presentation">
+									#if ($nav_child.hasChildren())
+										<a
+										aria-labelledby="layout_$nav_child.getLayoutId()"
+										href="$nav_child.getURL()"
+										$nav_child.getTarget()
+										role="menuitem">
+											<span class="pull-left">$nav_child.getName()</span>
+											<i class="fa fa-angle-right pull-right"></i>
+										</a>
+									#else
+										<a
+										aria-labelledby="layout_$nav_child.getLayoutId()"
+										href="$nav_child.getURL()"
+										$nav_child.getTarget()
+										role="menuitem">
+											$nav_child.getName()
+										</a>
+									#end
+
+
+									<!-- Nivel 2 -->
+									#if ($nav_child.hasChildren())
+										<ul class="dropdown-menu">
+											#foreach ($nav_child2 in $nav_child.getChildren())
+												#set ($nav_child2_attr_selected="")
+												#set ($nav_child2_css_class = "false")
+
+												#if ($nav_child2.isSelected())
+													#set ($nav_child2_attr_selected="aria-selected='true'")
+													#set ($nav_child2_css_class = "selected")
+												#end
+
+												<li class="$nav_child2_css_class" id="layout_$nav_child2.getLayoutId()" $nav_child2_attr_selected role="presentation">
+													<a
+													aria-labelledby="layout_$nav_child2.getLayoutId()"
+													href="$nav_child2.getURL()"
+													class="flex"
+													$nav_child2.getTarget()
+													role="menuitem">
+														<i class="fa fa-arrow-right"></i>
+														$nav_child2.getName()
+													</a>
+												</li>
+											#end
+										</ul>
+									#end
+								</li>
+							#end
+						</ul>
+					#end
+				</li>
+			#end
+		</ul>
+	</li>
+	<li id="menu-iit">
+		<i class="ico-menu"></i>
+	</li>
+</ul>
+</div>
+<script>
+	Liferay.Data.NAV_LIST_SELECTOR = '.navbar-inner .nav-collapse > ul';
+	
+	function displayFormContacto(){
+		$("#myModal").show();
+	}
+</script>
